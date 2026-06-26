@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Dashboard - Regulador Sensorial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Zenith Dashboard</h1>
+            <p class="subtitle">Regulador Sensorial & Organizador de Hiperfoco</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card full-width">
+            <h2>Roteiro do Hiperfoco Atual</h2>
+            <div class="todo-form">
+                <input type="text" id="todo-input" class="text-input" placeholder="Adicione um passo ou tema para o seu hiperfoco (ex: Ler capítulo 2, Escrever script...)">
+                <button id="btn-add-todo" style="width: auto; margin: 0; padding: 0.75rem 2rem;">Adicionar</button>
+            </div>
+            <ul id="todo-list">
+                </ul>
+        </div>
+
+        <div class="card">
+            <h2>Isolador de Ruído por Frequência</h2>
+            <div class="control-group">
+                <label for="noise-type">Tipo de Ruído:</label>
+                <select id="noise-type" class="select-control">
+                    <option value="brown">Ruído Marrom (Grave/Calmante)</option>
+                    <option value="white">Ruído Branco (Bloqueio Total)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="volume-control">Volume do Ruído</label>
+                <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.5">
+            </div>
+            <div class="control-group">
+                <label for="filter-control">Filtro Abafador (Low-Pass Hz)</label>
+                <input type="range" id="filter-control" min="200" max="5000" step="50" value="1000">
+            </div>
+            <button id="btn-noise">Iniciar Áudio Sensorial</button>
+        </div>
+
+        <div class="card">
+            <h2>Estágio de Hiperfoco</h2>
+            <div class="timer-display" id="timer">25:00</div>
+            <div class="timer-controls">
+                <button id="btn-timer-start">Iniciar Foco</button>
+                <button id="btn-timer-reset" class="btn-secondary">Reset</button>
+            </div>
+            <p id="timer-status">Estado atual: Concentração</p>
+        </div>
+
+        <div class="card">
+            <h2>Fidget Digital (Descarga Motora)</h2>
+            <label>Passe o mouse ou toque para descarregar energia e tiques:</label>
+            <canvas id="stimming-zone"></canvas>
+        </div>
+    </div>
+
+    <div id="panic-alert">
+        <div>
+            <p class="panic-title">AMBIENTE SEGURO ATIVADO</p>
+            <p class="panic-desc">Respire fundo. O ruído marrom está ativo. Pressione ESC para voltar.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
